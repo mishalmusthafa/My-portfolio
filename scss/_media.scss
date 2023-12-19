@@ -1,0 +1,144 @@
+// tablets and smaller
+
+@media (max-width:800px) {
+  #header-home {
+    height: 30rem;
+
+    .header-content {
+      padding: 5rem;
+    }
+  }
+}
+
+// smart phones media query
+@media (max-width:500px) {
+
+  // ...HOME PAGE...//
+
+  // main nav & Header
+  #main-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      padding: 1rem;
+    }
+  }
+
+  // header
+  #header {
+    &-home {
+      height: 10rem;
+      border-bottom: 3px solid $main-color;
+      background-position: 20% 30%;
+
+      .header-content {
+        display: none;
+      }
+    }
+
+    &-inner {
+      height: 10rem;
+    }
+  }
+
+  //  STACK GRID INTO 1FR
+
+  #home-a .specials,
+  #home-b .stats,
+  #home-c .process,
+  #about-d .testimonials,
+  #contact-b .contact-info,
+  .items {
+    grid-template-columns: 1fr;
+  }
+
+  #home {
+    &-a {
+      .specials div {
+        border-bottom: solid 1px $light-color;
+        padding-bottom: 1rem;
+
+        &:last-child {
+          padding-bottom: 0;
+          border: none;
+        }
+      }
+    }
+  }
+
+
+  // about
+
+  #about {
+    &-a {
+      .about-info {
+        grid-template-areas:
+          'bioimage'
+          'bio'
+          'aw1'
+          'aw2'
+          'aw3';
+      }
+    }
+
+    &-c {
+      display: none;
+    }
+  }
+
+
+  // contact
+
+  #contact {
+    &-a .text-field {
+      grid-template-areas:
+        'name'
+        'email'
+        'subject'
+        'number'
+        'message';
+      margin-bottom: 2rem;
+    }
+
+    &-b .contact-info div {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #555;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &-c h1 {
+      font-size: 2rem;
+    }
+
+  }
+
+  // footer 
+  #main-footer {
+    .footer-content {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
+
+}
+
+// Media for landscape 
+@media (max-height:580px) {
+  #header-home {
+    .header-content {
+      padding: 2rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}

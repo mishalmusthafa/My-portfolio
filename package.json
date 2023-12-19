@@ -1,0 +1,16 @@
+{
+  "name": "portfolio_website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --style expanded scss/main.scss",
+    "sass:watch": "sass --watch scss/main.scss dist/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}

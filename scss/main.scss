@@ -1,0 +1,414 @@
+@import 'config';
+@import 'utilities';
+@import 'items-grid';
+// General styling
+
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  background: $white-color;
+  color: set-text-color($white-color)
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+// logo
+#logo {
+  width: 70px;
+  height: 70px;
+}
+
+// main nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    padding-bottom: .5rem;
+    transition: border-color .5s;
+
+    &:hover {
+      border-color: $medium-color;
+    }
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+
+
+}
+
+// header
+#header {
+
+  // Header home
+  &-home {
+    background: $bg-image no-repeat center center /cover;
+    height: 100vh;
+    color: #fff;
+
+    // header content
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  // Header inner
+  &-inner {
+    background: $bg-image no-repeat 10% 30% /cover;
+    height: 5.5rem;
+    border-bottom: 3px solid $main-color;
+  }
+}
+
+//Home Sections
+
+#home {
+  background: $white-color;
+  color: set-text-color($white-color);
+
+  // home section A
+  &-a {
+    .specials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      margin-top: 3rem;
+
+      .fas {
+        color: $main-color;
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
+
+  // home section B Specialization
+
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        line-height: 2;
+      }
+
+      &-title {
+        font-size: 1.5rem;
+      }
+
+      &-number {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      div {
+        padding: 3rem 0;
+
+        &:nth-child(odd) {
+          background: $light-color;
+        }
+
+        &:nth-child(even) {
+          background: $medium-color;
+        }
+      }
+    }
+  }
+
+  // home section C
+
+  &-c {
+    background: $white-color;
+    color: set-text-color($white-color);
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      &-icon {
+        border-radius: 50%;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        position: relative;
+        padding: 2rem;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        transition: all 1s;
+
+        &:hover {
+          background: $main-color ;
+          transform: scale(1.2);
+
+          .process-step {
+            background: $dark-color;
+            transform: scale(0.6);
+
+          }
+        }
+      }
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        background: $main-color;
+        padding: 1rem;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        line-height: 15px;
+        text-align: center;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+// About section
+
+#about {
+
+  // About Section A
+  &-a {
+    .about-info {
+      display: grid;
+      grid-gap: 1.2rem;
+      grid-template-areas:
+        'bioimage bio bio'
+        'aw1 aw2 aw3';
+
+    }
+
+    .bio-image {
+      grid-area: bioimage;
+      width: 100%;
+
+    }
+
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $main-color;
+      padding: 0.8rem;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      margin: 1rem;
+    }
+  }
+
+  // About Section B : Progress Bar
+  &-b {
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 5px;
+      margin-bottom: 0.6rem;
+
+      div {
+        height: 100%;
+        background: $main-color;
+      }
+    }
+  }
+
+  // About Section C : Logos
+  &-c {
+    .about-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  // About Section D : Testimonials
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      p {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 0.5rem;
+        text-align: left;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+
+        li img {
+          width: 50px;
+          height: 50px;
+          margin-right: 0.5rem;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+}
+
+// Contact Section
+
+#contact {
+  &-a {
+    .text-field {
+      display: grid;
+      grid-template-areas:
+        'name email '
+        'subject number'
+        'message message';
+      grid-gap: 1.2rem;
+      margin-bottom: 5.8rem;
+
+      .input-name {
+        grid-area: name;
+      }
+
+      .input-email {
+        grid-area: email;
+      }
+
+      .input-subject {
+        grid-area: subject;
+      }
+
+      .input-number {
+        grid-area: number;
+      }
+
+      .input-message {
+        grid-area: message;
+        height: 100px;
+      }
+
+      .text-input {
+        padding: .5rem 1rem;
+      }
+    }
+
+    button[type="submit"] {
+      width: 50%;
+    }
+  }
+
+  // section B: contact info
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // Section C : Tagline 
+  &-c {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+// main footer
+#main-footer {
+  background: $dark-color;
+  color: set-text-color($dark-color);
+
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+
+    .social .fab {
+      color: set-text-color($dark-color);
+      border: 2px solid set-text-color($dark-color);
+      border-radius: 50%;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+
+      &:hover {
+        background: $main-color;
+      }
+    }
+  }
+}
+
+@import 'media';
