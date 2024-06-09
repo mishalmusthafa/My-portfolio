@@ -9,6 +9,7 @@
     background: $main-color;
     overflow: hidden;
 
+    
 
     &:after {
       // creating main color overlay using after for the item
@@ -40,8 +41,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-
 
     // image styele and transition
     &-image {
