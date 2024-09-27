@@ -47,7 +47,6 @@ class TypeWriter {
       // Pause before start typing
       typeSpeed = 500;
     }
-
     setTimeout(() => this.type(), typeSpeed);
   }
 }
@@ -63,3 +62,4 @@ function init() {
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
 }
+
